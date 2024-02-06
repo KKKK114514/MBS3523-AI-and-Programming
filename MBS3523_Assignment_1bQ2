@@ -17,14 +17,6 @@ while True:
     frameCanny = cv2.Canny(frame, 100, 100)
     cv2.imshow('Window Canny', frameCanny)
 
-    frameTx = cv2.flip(frame,1)
-    frameTxTx = numpy.hstack((frame, frameTx))
-
-    frameTyTy = cv2.flip(frameTxTx, 0)
-    frameTxTy = numpy.vstack((frameTxTx, frameTyTy))
-    frameTxTy = cv2.resize(frameTxTy, (620,480))
-
-    cv2.imshow('Window', frameTxTy)
 
 
     if cv2.waitKey(20) & 0xff == ord('q'):
